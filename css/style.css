@@ -234,7 +234,7 @@ header .container nav ul li a.active {
 /* end header */
 /* start landing */
 .landing {
-    background-image: url(images/landing.jpg);
+    background-image: url(../images/landing.jpg);
     background-size: cover;
     width: 100%;
     min-height: 100vh;
@@ -577,7 +577,7 @@ header .container nav ul li a.active {
 footer {
     padding-top: calc(var(--section-padding)/2);
     padding-bottom: calc(var(--section-padding)/2);
-    background-image: url(images/footer.jpg);
+    background-image: url(../images/footer.jpg);
     background-size: cover;
     position: relative;
 }
