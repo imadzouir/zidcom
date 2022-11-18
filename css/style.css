@@ -108,7 +108,7 @@
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html {
@@ -189,6 +189,42 @@ header .container nav ul li a {
     z-index: 2;
 }
 
+header .container nav i {
+    padding: 30px 10px;
+    color: var(--text-white);
+    font-size: 18px;
+    display: none;
+    position: relative
+}
+
+@media (max-width:425px) {
+    header .container nav ul {
+        display: none;
+    }
+
+    header .container nav i:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        width: 100%;
+        background-color: rgb(0 0 0 / 50%);
+    }
+
+    header .container nav ul li a {
+        padding-left: 25px;
+    }
+}
+
+@media (max-width:425px) {
+    header .container nav i {
+        display: block;
+        position: relative;
+        font-size: 24px;
+    }
+}
+
 header .container nav ul li a:hover,
 header .container nav ul li a.active {
     border-bottom: 1px solid var(--main-color);
@@ -208,7 +244,7 @@ header .container nav ul li a.active {
 .landing::before {
     content: "";
     position: absolute;
-    background-color: rgb(0 0 0 / 70%);
+    background-color: rgb(0 0 0 / 60%);
     top: 0;
     left: 0;
     width: 100%;
@@ -247,6 +283,21 @@ header .container nav ul li a.active {
     font-size: 18px;
     text-transform: capitalize;
     transition: 0.3s;
+}
+
+@media (max-width:425px) {
+    .landing .text h1 {
+        font-size: 40px;
+    }
+
+    .landing .text p {
+        font-size: 17px;
+    }
+
+    .landing .text a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 }
 
 .landing .text a:hover {
@@ -325,13 +376,15 @@ header .container nav ul li a.active {
 
 .about .container .about-content {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-top: 150px;
 }
 
 .about .container .about-content img {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     outline: none !important;
 }
 
@@ -339,17 +392,20 @@ header .container nav ul li a.active {
     width: 500px;
 }
 
+
 .about .container .about-content .text h3 {
-    position: relative;
-    top: -100px;
     font-size: 32px;
+    position: relative;
+    top: 0px;
 }
+
 
 .about .container .about-content .text p {
     font-size: 18px;
-    margin-top: -60px;
-    line-height: 1.5;
+    margin-top: 40px;
+    line-height: 1.6;
     color: #777;
+    text-align: start;
 }
 
 .about .container .about-content .text button {
@@ -367,6 +423,31 @@ header .container nav ul li a.active {
     cursor: pointer;
 }
 
+@media (max-width:425px) {
+    .about .container .about-content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about .container .about-content .text h3 {
+        font-size: 24px;
+    }
+
+    .about .container .about-content .text p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .about .container .about-content img {
+        margin-bottom: 20px;
+    }
+
+    .about .container .about-content .text button {
+        margin: 40px auto 0;
+        padding: 10px 20px;
+    }
+}
+
 /* end about  */
 /* start order */
 .order {
@@ -381,12 +462,16 @@ header .container nav ul li a.active {
     flex-wrap: wrap;
     margin-top: 150px;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.order .container .order-content form {
+    width: 90%;
 }
 
 .order .container .order-content .main-input {
     width: 100%;
-    max-width: 600px;
-    min-width: 600px;
     display: block;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -403,19 +488,21 @@ header .container nav ul li a.active {
     padding: 10px;
     border: 1px solid #ccc;
     background: none;
+    width: 100%;
 }
 
 .order .container .order-content textarea {
-    height: 150px;
+    height: 200px;
+    max-width: 100%;
 }
 
 .order .container .order-content input[type="submit"] {
+    display: block;
+    padding: 10px 30px;
+    margin-left: auto;
     background-color: var(--main-color);
     color: var(--text-white);
     border: none;
-    padding: 10px 30px;
-    display: block;
-    margin-left: auto;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -440,6 +527,7 @@ header .container nav ul li a.active {
 
 .contact .contact-content .box i {
     margin-right: 40px;
+    width: 24px;
 }
 
 .contact .contact-content .box .info {
@@ -449,6 +537,8 @@ header .container nav ul li a.active {
 
 .contact .contact-content .box .info .info-phone {
     display: flex;
+    justify-content: space-between;
+    width: 230px;
 }
 
 .contact .contact-content .box .info .info-phone .col-2 {
